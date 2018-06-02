@@ -15,15 +15,18 @@ class App extends React.Component {
     constructor() {
         super()
 
-        console.log('Counter component is created!')
-
         this.state = {
             screenshot: ''
         }
 
         this.capture = () => this.setState({screenshot: this.webcam.getScreenshot()})
+        this.saveInLocalStorage = () => {
+            localStorage.setItem(Date.now().toString(), this.state.screenshot)
+        }
 
         console.log(this.state)
+
+
     }
 
     setRef = (webcam) => {
@@ -34,6 +37,8 @@ class App extends React.Component {
     //     const imageSrc = this.webcam.getScreenshot();
     //
     // };
+
+    // saveInLocalStorage = () => {localStorage.setItem('screen', this.state.screenshot)}
 
     render() {
         return (
@@ -47,7 +52,10 @@ class App extends React.Component {
                     width={350}
                 />
                 <button onClick={this.capture}>Capture photo</button>
-                <div><img src={this.state.screenshot} alt=""/></div>
+                <div>
+                    <img src={this.state.screenshot} style={cameraStyle} alt=""/>
+                </div>
+                <button onClick={this.saveInLocalStorage}>Save photo</button>
 
             </div>
 
