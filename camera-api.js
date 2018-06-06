@@ -1,24 +1,23 @@
-var newImage = ''
-
 Webcam.set({
-    width: 640,
-    height: 480,
-    dest_width: 640,
-    dest_height: 480,
+    width: window.innerWidth,
+    height: window.innerWidth,
+    // dest_width: 640,
+    // dest_height: 480,
     image_format: 'jpeg',
     jpeg_quality: 90,
     flip_horiz: true,
 });
-Webcam.attach( '#my_camera' );
+Webcam.attach('#my_camera');
 
 
 function preview_snapshot() {
     // freeze camera so user can preview pic
     Webcam.freeze();
-
+    // document.getElementsByTagName('video').style.display = 'none';
     // swap button sets
     document.getElementById('pre_take_buttons').style.display = 'none';
     document.getElementById('post_take_buttons').style.display = '';
+    document.getElementById('after_drawing_buttons').style.display = 'none';
 }
 
 function cancel_preview() {
@@ -28,41 +27,43 @@ function cancel_preview() {
     // swap buttons back
     document.getElementById('pre_take_buttons').style.display = '';
     document.getElementById('post_take_buttons').style.display = 'none';
+    document.getElementById('after_drawing_buttons').style.display = 'none';
 }
 
-function save_photo() {
+function draw_photo() {
     // actually snap photo (from preview freeze) and display it
-    Webcam.snap( function(data_uri) {
+
+    Webcam.snap(function (data_uri) {
         // display results in page
         // export var newImage = data_uri
 
+        document.getElementById('my_camera').style.display = 'none';
+        document.getElementById('results').style.display = '';
         document.getElementById('results').innerHTML =
-            '<canvas id="nowDrawing" width="640" height="480"></canvas>'
+            '<canvas id="nowDrawing" ></canvas>'
 
-        var canvas = new fabric.Canvas("nowDrawing", {
-            hoverCursor: 'pointer',
-            selection: true,
-            selectionBorderColor: 'green',
-            backgroundColor: null,
-            isDrawingMode: true,
-        });
-
-        // Create a new instance of the Image class
-        var img = new Image();
-        img.src = data_uri
-        // When the image loads, set it as background image
-        img.onload = function() {
-            var f_img = new fabric.Image(img);
-
-            canvas.setBackgroundImage(f_img);
-
-            canvas.renderAll();
-        };
+        canvasPhotoBackground(data_uri)
 
         // swap buttons back
-        document.getElementById('pre_take_buttons').style.display = '';
+        document.getElementById('pre_take_buttons').style.display = 'none';
         document.getElementById('post_take_buttons').style.display = 'none';
+        document.getElementById('after_drawing_buttons').style.display = '';
 
-        console.log(img.src)
-    } );
+
+    });
+}
+
+function cancel_drawing() {
+
+    document.getElementById('my_camera').style.display = '';
+    document.getElementById('results').style.display = 'none';
+
+    document.getElementById('pre_take_buttons').style.display = '';
+    document.getElementById('post_take_buttons').style.display = 'none';
+    document.getElementById('after_drawing_buttons').style.display = 'none';
+
+}
+
+function save_photo_localstorage() {
+    console.log(canvas)
 }
