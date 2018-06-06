@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
+    <!--<link rel="stylesheet" href="style.css">-->
     <script src="webcam.js"></script>
     <script src="fabric.min.js"></script>
 
@@ -16,43 +16,24 @@
 
 
 <div id="my_camera"></div>
+<div id="results" style="display:none"></div>
 <form>
     <div id="pre_take_buttons">
         <input type=button value="Take Snapshot" onClick="preview_snapshot()">
     </div>
     <div id="post_take_buttons" style="display:none">
-        <input type=button value="&lt; Take Another" onClick="cancel_preview()">
-        <input type=button value="Save Photo &gt;" onClick="save_photo()" style="font-weight:bold;">
+        <input type=button value="&lt; Take another photo" onClick="cancel_preview()">
+        <input type=button value="Draw on this photo" onClick="draw_photo()" style="font-weight:bold;">
+    </div>
+    <div id="after_drawing_buttons" style="display:none">
+        <input type=button value="&lt; Take another photo" onClick="cancel_drawing()">
+        <input type=button value="SAVE THIS" onClick="save_photo_localstorage()" style="font-weight:bold;">
     </div>
 </form>
 
-<div id="results"></div>
 
 <script src="camera-api.js"></script>
-<!--<script>-->
-    <!--var canvas = new fabric.Canvas("nowDrawing", {-->
-        <!--hoverCursor: 'pointer',-->
-        <!--selection: true,-->
-        <!--selectionBorderColor: 'green',-->
-        <!--backgroundColor: null-->
-    <!--});-->
-
-    <!--// Create a new instance of the Image class-->
-    <!--var img = new Image();-->
-
-    <!--// When the image loads, set it as background image-->
-    <!--img.onload = function() {-->
-        <!--var f_img = new fabric.Image(img);-->
-
-        <!--canvas.setBackgroundImage(f_img);-->
-
-        <!--canvas.renderAll();-->
-    <!--};-->
-
-    <!--// Set the src of the image with the base64 string-->
-    <!--img.src = newImage;-->
-
-<!--</script>-->
+<script src="canvas.js"></script>
 
 
 </body>
