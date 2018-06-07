@@ -2,16 +2,40 @@ var canvas
 
 function canvasPhotoBackground(data_uri) {
 
-    canvas = new fabric.Canvas("nowDrawing", {
-        hoverCursor: 'pointer',
-        selection: true,
-        selectionBorderColor: 'green',
-        backgroundColor: null,
-        isDrawingMode: true,
-        color: 'red',
-        width: window.innerWidth,
-        height: window.innerWidth,
-    });
+    if (isMobile) {
+        canvas = new fabric.Canvas("nowDrawing", {
+            hoverCursor: 'pointer',
+            selection: true,
+            selectionBorderColor: 'green',
+            backgroundColor: null,
+            isDrawingMode: true,
+            color: 'red',
+            width: window.innerWidth,
+            height: window.innerWidth,
+        });
+    } else {
+        canvas = new fabric.Canvas("nowDrawing", {
+            hoverCursor: 'pointer',
+            selection: true,
+            selectionBorderColor: 'green',
+            backgroundColor: null,
+            isDrawingMode: true,
+            color: 'red',
+            width: 640,
+            height: 480,
+        });
+    }
+
+    // canvas = new fabric.Canvas("nowDrawing", {
+    //     hoverCursor: 'pointer',
+    //     selection: true,
+    //     selectionBorderColor: 'green',
+    //     backgroundColor: null,
+    //     isDrawingMode: true,
+    //     color: 'red',
+    //     width: window.innerWidth,
+    //     height: window.innerWidth,
+    // });
 
     // canvas.width = window.innerWidth;
     // canvas.height = window.innerHeight;

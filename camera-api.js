@@ -1,12 +1,35 @@
-Webcam.set({
-    width: window.innerWidth,
-    height: window.innerWidth,
-    // dest_width: 640,
-    // dest_height: 480,
-    image_format: 'jpeg',
-    jpeg_quality: 90,
-    flip_horiz: true,
-});
+if (isMobile) {
+    Webcam.set({
+        width: window.innerWidth,
+        height: window.innerWidth,
+        // dest_width: 640,
+        // dest_height: 480,
+        image_format: 'jpeg',
+        jpeg_quality: 90,
+        flip_horiz: true,
+    });
+} else {
+    Webcam.set({
+        width: 640,
+        height: 480,
+        // dest_width: 640,
+        // dest_height: 480,
+        image_format: 'jpeg',
+        jpeg_quality: 90,
+        flip_horiz: true,
+    });
+}
+
+
+// Webcam.set({
+//     width: window.innerWidth,
+//     height: window.innerWidth,
+//     // dest_width: 640,
+//     // dest_height: 480,
+//     image_format: 'jpeg',
+//     jpeg_quality: 90,
+//     flip_horiz: true,
+// });
 Webcam.attach('#my_camera');
 
 
