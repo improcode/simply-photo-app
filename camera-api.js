@@ -20,16 +20,6 @@ if (isMobile) {
     });
 }
 
-
-// Webcam.set({
-//     width: window.innerWidth,
-//     height: window.innerWidth,
-//     // dest_width: 640,
-//     // dest_height: 480,
-//     image_format: 'jpeg',
-//     jpeg_quality: 90,
-//     flip_horiz: true,
-// });
 Webcam.attach('#my_camera');
 
 
@@ -92,5 +82,5 @@ function cancel_drawing() {
 }
 
 function save_photo_localstorage() {
-    console.log(canvas)
+    localStorage.setItem(Date.now().toString(), canvas.toDataURL('png'))
 }

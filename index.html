@@ -7,8 +7,6 @@
     <script src="webcam.js"></script>
     <script src="fabric.min.js"></script>
     <script src="piklor.js"></script>
-    <!--<script src='spectrum.js'></script>-->
-    <!--<link rel='stylesheet' href='spectrum.css' />-->
 
 
 </html>
@@ -31,6 +29,7 @@
     </div>
     <div id="after_drawing_buttons" style="display:none">
         <input type=button value="&lt; Take another photo" onClick="cancel_drawing()">
+        <input type=button value="CLEAR" onClick="clear_drawing()">
         <input type=button value="SAVE THIS" onClick="save_photo_localstorage()" style="font-weight:bold;">
     </div>
     <div id="drawing_options" style="display:none">
@@ -40,10 +39,6 @@
     </div>
 </form>
 
-<!--<div class="picker-wrapper">-->
-    <!--<div class="color-picker">-->
-    <!--</div>-->
-<!--</div>-->
 
 <script src="camera-api.js"></script>
 <script src="canvas.js"></script>
