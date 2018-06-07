@@ -5,6 +5,9 @@
     <link rel="stylesheet" href="style.css">
     <script src="webcam.js"></script>
     <script src="fabric.min.js"></script>
+    <script src="piklor.js"></script>
+    <!--<script src='spectrum.js'></script>-->
+    <!--<link rel='stylesheet' href='spectrum.css' />-->
 
 
 </html>
@@ -29,11 +32,60 @@
         <input type=button value="&lt; Take another photo" onClick="cancel_drawing()">
         <input type=button value="SAVE THIS" onClick="save_photo_localstorage()" style="font-weight:bold;">
     </div>
+    <div id="drawing_options" style="display:none">
+        <div class="color-picker">
+        </div>
+
+    </div>
 </form>
 
+<!--<div class="picker-wrapper">-->
+    <!--<div class="color-picker">-->
+    <!--</div>-->
+<!--</div>-->
 
 <script src="camera-api.js"></script>
 <script src="canvas.js"></script>
+<script>
+    // window.addEventListener("load", function () {
+        var pk = new Piklor(".color-picker", [
+                "#1abc9c"
+                , "#2ecc71"
+                , "#3498db"
+                , "#9b59b6"
+                , "#34495e"
+                , "#16a085"
+                , "#27ae60"
+                , "#2980b9"
+                , "#8e44ad"
+                , "#2c3e50"
+                , "#f1c40f"
+                , "#e67e22"
+                , "#e74c3c"
+                , "#ecf0f1"
+                , "#95a5a6"
+                , "#f39c12"
+                , "#d35400"
+                , "#c0392b"
+                , "#bdc3c7"
+                , "#7f8c8d"
+            ], {
+                openEvent: "",
+                autoclose: false,
+            })
+            // , wrapperEl = pk.getElm(".picker-wrapper")
+        ;
+
+        // pk.open()
+
+        pk.colorChosen(function (col) {
+            canvas.freeDrawingBrush.color = col;
+        });
+
+    // })
+
+
+</script>
 
 
 </body>

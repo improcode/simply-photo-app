@@ -8,6 +8,7 @@ function canvasPhotoBackground(data_uri) {
         selectionBorderColor: 'green',
         backgroundColor: null,
         isDrawingMode: true,
+        color: 'red',
         width: window.innerWidth,
         height: window.innerWidth,
     });
@@ -26,6 +27,9 @@ function canvasPhotoBackground(data_uri) {
         // {scaleX: window.innerWidth / 640, scaleY: window.innerWidth / 480}
         canvas.setBackgroundImage(f_img);
         canvas.renderAll();
+
+        canvas.freeDrawingBrush.color = "rgba(255,0,0,.3)"
+        canvas.freeDrawingBrush.width = 6
 
         // canvas.setBackgroundImage(f_img, canvas.renderAll.bind(canvas), {
         //     width: canvas.width,

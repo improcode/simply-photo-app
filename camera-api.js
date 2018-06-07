@@ -18,6 +18,7 @@ function preview_snapshot() {
     document.getElementById('pre_take_buttons').style.display = 'none';
     document.getElementById('post_take_buttons').style.display = '';
     document.getElementById('after_drawing_buttons').style.display = 'none';
+    document.getElementById('drawing_options').style.display = 'none';
 }
 
 function cancel_preview() {
@@ -28,6 +29,7 @@ function cancel_preview() {
     document.getElementById('pre_take_buttons').style.display = '';
     document.getElementById('post_take_buttons').style.display = 'none';
     document.getElementById('after_drawing_buttons').style.display = 'none';
+    document.getElementById('drawing_options').style.display = 'none';
 }
 
 function draw_photo() {
@@ -48,6 +50,7 @@ function draw_photo() {
         document.getElementById('pre_take_buttons').style.display = 'none';
         document.getElementById('post_take_buttons').style.display = 'none';
         document.getElementById('after_drawing_buttons').style.display = '';
+        document.getElementById('drawing_options').style.display = '';
 
 
     });
@@ -61,6 +64,7 @@ function cancel_drawing() {
     document.getElementById('pre_take_buttons').style.display = '';
     document.getElementById('post_take_buttons').style.display = 'none';
     document.getElementById('after_drawing_buttons').style.display = 'none';
+    // document.getElementById('drawing_options').style.display = 'none';
 
 }
 
