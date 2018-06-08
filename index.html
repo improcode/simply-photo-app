@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="desktop_mobile_test.js"></script>
     <link rel="stylesheet" href="style.css">
     <script src="webcam.js"></script>
@@ -31,6 +32,7 @@
         <input type=button value="&lt; Take another photo" onClick="cancel_drawing()">
         <input type=button value="CLEAR" onClick="clear_drawing()">
         <input type=button value="SAVE THIS" onClick="save_photo_localstorage()" style="font-weight:bold;">
+        <button onClick="download()" type=button style="font-weight:bold;"><a id="download" href="" download>DOWNLOAD</a></button>
     </div>
     <div id="drawing_options" style="display:none">
         <div class="color-picker">

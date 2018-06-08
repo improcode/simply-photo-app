@@ -77,7 +77,7 @@ function cancel_drawing() {
     document.getElementById('pre_take_buttons').style.display = '';
     document.getElementById('post_take_buttons').style.display = 'none';
     document.getElementById('after_drawing_buttons').style.display = 'none';
-    // document.getElementById('drawing_options').style.display = 'none';
+    document.getElementById('drawing_options').style.display = 'none';
 
 }
 

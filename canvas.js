@@ -1,5 +1,6 @@
 var canvas
 var f_img
+var data
 
 function canvasPhotoBackground(data_uri) {
 
@@ -52,6 +53,11 @@ function clear_drawing() {
     canvas.clear()
     canvas.setBackgroundImage(f_img);
     canvas.renderAll();
-
-
 }
+
+function download() {
+var data = canvas.toDataURL("image/png");
+    document.getElementById('download').setAttribute("download", "YourFileName.png");
+    document.getElementById('download').setAttribute("href", data);
+}
+
