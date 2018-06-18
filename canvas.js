@@ -1,6 +1,5 @@
 var canvas
 var f_img
-var data
 
 function canvasPhotoBackground(data_uri) {
 

@@ -2,8 +2,8 @@ if (isMobile) {
     Webcam.set({
         width: window.innerWidth,
         height: window.innerWidth,
-        // dest_width: 640,
-        // dest_height: 480,
+        // dest_width: window.innerWidth,
+        // dest_height: window.innerWidth,
         image_format: 'jpeg',
         jpeg_quality: 90,
         flip_horiz: true,
@@ -84,3 +84,4 @@ function cancel_drawing() {
 function save_photo_localstorage() {
     localStorage.setItem(Date.now().toString(), canvas.toDataURL('png'))
 }
+
